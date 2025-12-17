@@ -1,0 +1,247 @@
+# UI Customization Specification  
+## Physical AI & Humanoid Robotics — Docusaurus
+
+> **Important Note**  
+> This project already contains a complete book inside `book_source/docs`.  
+> Your task is to **ONLY customize the UI, theme, and layout**.  
+> ❌ Do NOT modify any Markdown book files  
+> ❌ Do NOT delete or regenerate docs content  
+> ✅ Only update UI-related files
+
+## 🎯 ROLE
+
+You are a **frontend UI engineer and Docusaurus expert**
+
+Your goal is to apply a **futuristic, robotics-themed dark UI** on an existing Docusaurus book project located in `book_source`
+
+---
+
+## 🎨 GLOBAL DESIGN THEME
+
+| Property | Value |
+|--------|------|
+| Background | `#000000` (Pure Black) |
+| Primary Accent Color | `#FF0066` |
+| Font | **Poppins** |
+| Style | Clean • Futuristic • Robotics |
+
+---
+
+## 1️⃣ GLOBAL STYLING
+
+### File: `src/css/custom.css`
+
+Requirements:
+- Entire website background must be black
+- Default text color white
+- Accent color `#FF0066`
+- Import and apply **Poppins font globally**
+- Headings → Poppins, bold
+- Body text → Poppins, regular
+- Smooth hover and transition effects
+
+---
+
+## 2️⃣ NAVBAR CUSTOMIZATION
+
+### File: `docusaurus.config.ts`
+
+#### Left Side
+- Robot icon 🤖
+- Site title **after icon**
+
+#### Right Side
+- Button: **Get Started**
+
+##### Get Started Button Style
+- Shape: Rectangle (no rounded corners)
+- Background: Black
+- Text + Border: `#FF0066`
+- Hover Effect:
+  - Background → `#FF0066`
+  - Text → Black
+
+##### Button Action
+- On click → open first book chapter  
+  (`/docs/intro` or equivalent)
+
+---
+
+## 3️⃣ CUSTOM HOME PAGE
+
+### File: `src/pages/index.tsx`
+
+---
+
+### 🔹 Hero Center Box
+
+- Small box centered on page
+- Rounded corners
+- Soft glowing / light shine effect
+- Text color: `#FF0066`
+
+**Text inside box:**
+```
+
+The Future of Robotics • ROS 2 & Isaac Sim • 2025 Edition
+
+```
+
+---
+
+### 🔹 Main Heading (Center Aligned)
+
+**Line 1 (White):**
+```
+
+The Future of
+
+```
+
+**Line 2:**
+- `Physical AI &` → White
+- `Humanoid Robotics` → `#FF0066`
+
+---
+
+### 🔹 Intro Paragraph
+
+- 2 lines
+- White text
+- Explains Physical AI & Humanoid Robotics journey
+
+---
+
+### 🔘 Primary Button
+
+**Text:** Start Learning  
+- Same style as Get Started button
+- Same hover effects
+- On click → open book chapters
+
+---
+
+## 4️⃣ ABOUT THE COURSE SECTION
+
+### Layout: Two Columns
+
+#### Left Column
+- Section heading
+- Short paragraph describing:
+  - What the course is
+  - Who it is for
+  - What learners will build
+
+#### Right Column
+- 3 feature boxes
+- Use **React Icons**
+- Each box contains:
+  - Icon (accent color)
+  - Heading
+  - Short description
+
+---
+
+## 5️⃣ STATS SECTION
+
+### Layout
+- 4 simple blocks
+- No heavy borders
+
+**Example:**
+- **04**  
+  Modules
+
+- **1000+**  
+  Active Learners
+
+- Add 2 more similar stats
+
+**Styling:**
+- Numbers → `#FF0066`
+- Labels → White
+
+---
+
+## 6️⃣ MODULES & FEATURES SECTION
+
+### Layout
+- Grid system
+- 3 boxes per row
+- Total 6 boxes
+
+### Each Box
+- React Icon
+- Heading
+- Short paragraph
+- Hover:
+  - Subtle glow
+  - Border or shadow in `#FF0066`
+
+---
+
+## 7️⃣ FINAL CALL-TO-ACTION
+
+Centered text:
+```
+
+Ready to start your journey in Physical AI?
+
+```
+
+Button:
+- **Start Reading**
+- Same UI as other buttons
+- Hover effects enabled
+- On click → open book chapters
+
+---
+
+## 8️⃣ FOOTER
+
+### File: `src/theme/Footer`
+
+Requirements:
+- Black background
+- White text
+- Accent color `#FF0066`
+- Clean, minimal layout
+- Include:
+  - Course name
+  - Current year
+  - Short futuristic tagline
+
+---
+
+## 🔁 BUTTON CONSISTENCY (VERY IMPORTANT)
+
+All buttons:
+- Get Started
+- Start Learning
+- Start Reading
+
+Must:
+- Look exactly the same
+- Have same hover effects
+- Navigate to book chapters
+
+---
+
+## ✅ FINAL CHECKLIST
+
+- [ ] Book content untouched
+- [ ] Black background everywhere
+- [ ] Accent color `#FF0066`
+- [ ] Poppins font applied globally
+- [ ] Rectangular buttons only
+- [ ] Subtle glow effects
+- [ ] Custom home page active
+- [ ] Navbar & footer customized
+
+---
+
+## 🚀 RESULT
+
+A professional, futuristic, beginner-friendly **Physical AI & Humanoid Robotics** learning platform UI built on top of an existing Docusaurus book.
+```
+

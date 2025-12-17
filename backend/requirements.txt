@@ -1,0 +1,7 @@
+fastapi
+openai
+qdrant-client
+psycopg2-binary
+SQLAlchemy
+httpx
+uvicorn[standard]

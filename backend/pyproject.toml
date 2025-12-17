@@ -1,0 +1,30 @@
+[project]
+name = "rag-chatbot-backend"
+version = "0.1.0"
+description = "FastAPI backend for RAG Chatbot for Docusaurus Book"
+authors = [{ name = "Gemini CLI Agent", email = "agent@example.com" }]
+requires-python = "==3.14.0" # Specific version as per user's choice
+dependencies = [
+    "fastapi",
+    "openai-agents-sdk", # Assuming this is the correct package name for OpenAI Agents SDK
+    "qdrant-client",
+    "psycopg2-binary", # Using binary for easier installation
+    "SQLAlchemy",
+    "google-generativeai", # Assuming this is the correct package name for Gemini API Client
+    "uvicorn[standard]", # For running FastAPI
+]
+
+[project.scripts]
+# Entry point for the backend, if needed as a script
+# main = "backend.src.main:app" # FastAPI apps are typically run with uvicorn directly
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra -q"
+testpaths = [
+    "tests",
+]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"

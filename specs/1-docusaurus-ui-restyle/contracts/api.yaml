@@ -1,0 +1,11 @@
+# API Contracts for Docusaurus UI Restyle
+
+info:
+  title: "Docusaurus UI Restyle API"
+  version: "1.0.0"
+  description: |
+    This feature is exclusively focused on frontend UI and theming.
+    No new APIs are defined or consumed as part of this work.
+    This document is a placeholder to conform to the planning process.
+
+paths: {}

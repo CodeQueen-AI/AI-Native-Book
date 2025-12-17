@@ -1,0 +1,89 @@
+openapi: 3.0.0
+info:
+  title: RAG Chatbot API
+  version: 1.0.0
+  description: API for the Retrieval Augmented Generation (RAG) Chatbot for Docusaurus Book.
+
+paths:
+  /chat:
+    post:
+      summary: Ask a question to the RAG Chatbot.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                query:
+                  type: string
+                  description: The user's natural language question.
+                context_type:
+                  type: string
+                  enum: [full_book, selected_text]
+                  default: full_book
+                  description: Type of context for the query (full book or selected text).
+                selected_text:
+                  type: string
+                  nullable: true
+                  description: Optional - text selected by the user, if context_type is 'selected_text'.
+      responses:
+        '200':
+          description: Successful response with the generated answer and source chunks.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  answer:
+                    type: string
+                    description: The generated answer from the Gemini model.
+                  source_chunks:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        text:
+                          type: string
+                          description: The text content of the source chunk.
+                        metadata:
+                          type: object
+                          description: Metadata of the source chunk (e.g., heading, page, file_path).
+                  response_time_ms:
+                    type: number
+                    format: float
+                    description: Response time in milliseconds.
+        '400':
+          description: Invalid request payload.
+        '500':
+          description: Internal server error.
+
+  /index-book:
+    post:
+      summary: Trigger re-indexing of the Docusaurus book content.
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                force:
+                  type: boolean
+                  default: false
+                  description: Force re-indexing even if no changes are detected.
+      responses:
+        '200':
+          description: Indexing process initiated successfully.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Indexing process started."
+        '409':
+          description: Conflict - Indexing already in progress.
+        '500':
+          description: Internal server error during indexing.
